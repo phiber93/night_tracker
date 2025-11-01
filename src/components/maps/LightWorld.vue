@@ -1,13 +1,17 @@
 <script setup lang="ts">
-import ItemLocation from '../map-elemtents/ItemLocation.vue'
-import { alwaysLocationsLightWorld } from '@/lib/light-world-locations'
+import type { IItemLocation } from '@/lib/interfaces';
+import ItemLocation from '../map-elemtents/ItemLocation.vue';
+
+defineProps<{
+  locations: IItemLocation[];
+}>();
 </script>
 
 <template>
   <div class="lightworld">
     <img src="/src/assets/lightworld.webp" />
     <ItemLocation
-      v-for="location in alwaysLocationsLightWorld"
+      v-for="location in locations"
       :key="location.name"
       :name="location.name"
       :top="location.top"

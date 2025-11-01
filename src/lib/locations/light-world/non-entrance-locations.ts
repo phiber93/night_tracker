@@ -1,11 +1,6 @@
-import type { IItemLocation } from './interfaces'
+import type { IItemLocation } from '@/lib/interfaces';
 
-export const alwaysLocationsLightWorld: IItemLocation[] = [
-  {
-    name: 'Mushroom Spot',
-    top: 7,
-    left: 11,
-  },
+export const nonEntranceItemLocationsLightWorld: IItemLocation[] = [
   {
     name: 'Lumberjack Tree',
     top: 6,
@@ -20,11 +15,6 @@ export const alwaysLocationsLightWorld: IItemLocation[] = [
     name: 'Blinds Hut',
     top: 40,
     left: 11.5,
-  },
-  {
-    name: 'Bottle Vendor',
-    top: 45,
-    left: 8,
   },
   {
     name: 'Chicken Hut',
@@ -47,19 +37,8 @@ export const alwaysLocationsLightWorld: IItemLocation[] = [
     left: 14.4,
   },
   {
-    name: 'Race Game',
-    top: 67,
-    left: 4,
-  },
-  {
-    name: 'Desert Ledge',
-    top: 90,
-    left: 1,
-  },
-  {
     name: 'Cave 45',
     top: 80,
     left: 25,
   },
-  { name: 'Shovel Spot', top: 64, left: 28 },
-]
+];

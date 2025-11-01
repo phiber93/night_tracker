@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import type { IItemLocation } from '@/lib/interfaces'
-import { ref } from 'vue'
+import type { IItemLocation } from '@/lib/interfaces';
+import { ref } from 'vue';
 
-defineProps<IItemLocation>()
+defineProps<IItemLocation>();
 
-const state = ref<'available' | 'checked'>('available')
+const state = ref<'available' | 'checked'>('available');
 </script>
 
 <template>
