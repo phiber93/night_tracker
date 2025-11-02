@@ -4,12 +4,13 @@ import ItemLocation from '../map-elemtents/ItemLocation.vue';
 
 defineProps<{
   locations: IItemLocation[];
+  imageSrc: string;
 }>();
 </script>
 
 <template>
-  <div class="lightworld">
-    <img src="/src/assets/lightworld.webp" />
+  <div class="map">
+    <img :src="imageSrc" />
     <ItemLocation
       v-for="location in locations"
       :key="location.name"
@@ -21,7 +22,7 @@ defineProps<{
 </template>
 
 <style>
-.lightworld {
+.map {
   max-width: 512px;
   max-height: 512px;
   position: relative;

@@ -1,15 +1,18 @@
 <script setup lang="ts">
-import DarkWorld from '@/components/maps/DarkWorld.vue';
-import LightWorld from '@/components/maps/LightWorld.vue';
+import WorldMap from '@/components/maps/WorldMap.vue';
 import type { IItemLocation } from '@/lib/interfaces';
 
 defineProps<{
   lightWorldLocations: IItemLocation[];
+  darkWorldLocations: IItemLocation[];
 }>();
 </script>
 
 <template>
-  <div class="map-wrapper"><LightWorld :locations="lightWorldLocations" /> <DarkWorld /></div>
+  <div class="map-wrapper">
+    <WorldMap :locations="lightWorldLocations" image-src="/src/assets/lightworld.webp" />
+    <WorldMap :locations="darkWorldLocations" image-src="/src/assets/darkworld.webp" />
+  </div>
 </template>
 
 <style>

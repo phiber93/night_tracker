@@ -6,6 +6,7 @@ import type { IItemLocation } from './lib/interfaces';
 import { alwaysLocationsLightWorld } from './lib/locations/light-world/always-locations';
 import { nonEntranceItemLocationsLightWorld } from './lib/locations/light-world/non-entrance-locations';
 import { shopLocationsLightWorld } from './lib/locations/light-world/shop-locations';
+import { alwaysLocationsDarkworld } from './lib/locations/dark-world/always-locations';
 
 const shopsanityModel = ref(false);
 const entranceModel = ref(false);
@@ -29,11 +30,18 @@ const lightWorldLocations = computed(() => {
 
   return allLocations;
 });
+
+const darkWorldLocations = computed(() => {
+  const allLocations: IItemLocation[] = [...alwaysLocationsDarkworld];
+
+  return allLocations;
+});
 </script>
 
 <template>
-  <TrackerView :light-world-locations="lightWorldLocations" />
+  <TrackerView
+    :light-world-locations="lightWorldLocations"
+    :dark-world-locations="darkWorldLocations"
+  />
   <SettingsView v-model:shopsanity="shopsanityModel" v-model:entrance="entranceModel" />
 </template>
-
-<style scoped></style>
