@@ -8,7 +8,7 @@ import { nonEntranceItemLocationsLightWorld } from './lib/locations/light-world/
 import { shopLocationsLightWorld } from './lib/locations/light-world/shop-locations';
 
 const shopsanityModel = ref(false);
-const entranceModel = ref(true);
+const entranceModel = ref(false);
 
 const lightWorldLocations = computed(() => {
   const allLocations: IItemLocation[] = [...alwaysLocationsLightWorld];

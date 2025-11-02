@@ -25,7 +25,6 @@ const state = ref<'available' | 'checked'>('available');
   width: 2.5%;
   height: 2.5%;
   border: 1px black solid;
-  border-radius: 99%;
 
   &.available {
     background-color: green;

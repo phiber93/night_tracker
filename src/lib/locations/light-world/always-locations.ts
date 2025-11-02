@@ -76,4 +76,14 @@ export const alwaysLocationsLightWorld: IItemLocation[] = [
     top: 12,
     left: 96,
   },
+  {
+    name: 'Old Man Rescue',
+    top: 20,
+    left: 43.7,
+  },
+  {
+    name: 'Man under Bridge',
+    top: 67.5,
+    left: 70,
+  },
 ];
