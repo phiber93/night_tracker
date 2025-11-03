@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import type { IItemLocation } from '@/lib/interfaces';
 import ItemLocation from '../map-elemtents/ItemLocation.vue';
+import EntranceLocation from '../map-elemtents/EntranceLocation.vue';
 
 defineProps<{
-  locations: IItemLocation[];
+  itemLocations: IItemLocation[];
+  entranceLocations: IItemLocation[];
   imageSrc: string;
 }>();
 </script>
@@ -12,7 +14,14 @@ defineProps<{
   <div class="map">
     <img :src="imageSrc" />
     <ItemLocation
-      v-for="location in locations"
+      v-for="location in itemLocations"
+      :key="location.name"
+      :name="location.name"
+      :top="location.top"
+      :left="location.left"
+    />
+    <EntranceLocation
+      v-for="location in entranceLocations"
       :key="location.name"
       :name="location.name"
       :top="location.top"

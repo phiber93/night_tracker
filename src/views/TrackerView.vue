@@ -5,13 +5,23 @@ import type { IItemLocation } from '@/lib/interfaces';
 defineProps<{
   lightWorldLocations: IItemLocation[];
   darkWorldLocations: IItemLocation[];
+  ligthWorldEntrances: IItemLocation[];
+  darkWorldEntrances: IItemLocation[];
 }>();
 </script>
 
 <template>
   <div class="map-wrapper">
-    <WorldMap :locations="lightWorldLocations" image-src="/src/assets/lightworld.webp" />
-    <WorldMap :locations="darkWorldLocations" image-src="/src/assets/darkworld.webp" />
+    <WorldMap
+      :item-locations="lightWorldLocations"
+      :entrance-locations="ligthWorldEntrances"
+      image-src="/src/assets/lightworld.webp"
+    />
+    <WorldMap
+      :item-locations="darkWorldLocations"
+      :entrance-locations="darkWorldEntrances"
+      image-src="/src/assets/darkworld.webp"
+    />
   </div>
 </template>
 

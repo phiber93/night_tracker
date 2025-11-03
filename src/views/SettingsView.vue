@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import { EntraneShuffleOptions } from '@/lib/enums';
+
 const shopsanityModel = defineModel('shopsanity', { required: true });
-const entranceModel = defineModel('entrance', { required: true });
+const entranceModel = defineModel<EntraneShuffleOptions>('entrance', { required: true });
 </script>
 
 <template>
@@ -11,7 +13,11 @@ const entranceModel = defineModel('entrance', { required: true });
     </label>
     <label>
       Entrance
-      <input type="checkbox" v-model="entranceModel" />
+      <select v-model="entranceModel">
+        <option v-for="option in EntraneShuffleOptions" :key="option" :value="option">
+          {{ option }}
+        </option>
+      </select>
     </label>
   </div>
 </template>
