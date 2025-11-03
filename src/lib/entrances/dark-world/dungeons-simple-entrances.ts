@@ -39,6 +39,6 @@ export const dungeonsSimpleEntrancesDarkWorld: IItemLocation[] = [
   {
     name: 'Ganons Tower',
     top: 3,
-    left: 54.6,
+    left: 55,
   },
 ];
