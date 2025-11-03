@@ -26,4 +26,9 @@ export const alwaysLocationsDarkworld: IItemLocation[] = [
     top: 44,
     left: 57,
   },
+  {
+    name: 'Purple Chest',
+    top: 51,
+    left: 29.5,
+  },
 ];

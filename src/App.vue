@@ -7,8 +7,10 @@ import { alwaysLocationsLightWorld } from './lib/locations/light-world/always-lo
 import { nonEntranceItemLocationsLightWorld } from './lib/locations/light-world/non-entrance-locations';
 import { shopLocationsLightWorld } from './lib/locations/light-world/shop-locations';
 import { alwaysLocationsDarkworld } from './lib/locations/dark-world/always-locations';
+import { shopLocationsDarkWorld } from './lib/locations/dark-world/shop-locations';
+import { nonEntranceItemLocationsDarkWorld } from './lib/locations/dark-world/non-entrance-locations';
 
-const shopsanityModel = ref(false);
+const shopsanityModel = ref(true);
 const entranceModel = ref(false);
 
 const lightWorldLocations = computed(() => {
@@ -34,6 +36,19 @@ const lightWorldLocations = computed(() => {
 const darkWorldLocations = computed(() => {
   const allLocations: IItemLocation[] = [...alwaysLocationsDarkworld];
 
+  if (entranceModel.value) {
+    return allLocations;
+  }
+
+  for (const nonEntranceLocation of nonEntranceItemLocationsDarkWorld) {
+    allLocations.push(nonEntranceLocation);
+  }
+
+  if (shopsanityModel.value) {
+    for (const shopsanityLocation of shopLocationsDarkWorld) {
+      allLocations.push(shopsanityLocation);
+    }
+  }
   return allLocations;
 });
 </script>
