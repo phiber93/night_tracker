@@ -56,42 +56,32 @@ const darkWorldLocations = computed(() => {
 });
 
 const lightWorldEntrances = computed(() => {
-  const allEntrances: IItemLocation[] = [];
-
   switch (entranceModel.value) {
     case EntraneShuffleOptions.NONE:
-      return allEntrances;
+      return [];
     case EntraneShuffleOptions.DUNGEONS_SIMPLE:
-      for (const entrance of dungeonsSimpleEntrancesLightWorld) {
-        allEntrances.push(entrance);
-      }
-      return allEntrances;
+      return [...dungeonsSimpleEntrancesLightWorld];
     case EntraneShuffleOptions.DUNGEONS_FULL:
-      return allEntrances;
+      return [...dungeonsSimpleEntrancesLightWorld];
     case EntraneShuffleOptions.CROSSED:
-      return allEntrances;
+      return [...dungeonsSimpleEntrancesLightWorld];
     default:
-      return allEntrances;
+      return [];
   }
 });
 
 const darkWorldEntrances = computed(() => {
-  const allEntrances: IItemLocation[] = [];
-
   switch (entranceModel.value) {
     case EntraneShuffleOptions.NONE:
-      return allEntrances;
+      return [];
     case EntraneShuffleOptions.DUNGEONS_SIMPLE:
-      for (const entrance of dungeonsSimpleEntrancesDarkWorld) {
-        allEntrances.push(entrance);
-      }
-      return allEntrances;
+      return [...dungeonsSimpleEntrancesDarkWorld];
     case EntraneShuffleOptions.DUNGEONS_FULL:
-      return allEntrances;
+      return [...dungeonsSimpleEntrancesDarkWorld];
     case EntraneShuffleOptions.CROSSED:
-      return allEntrances;
+      return [...dungeonsSimpleEntrancesDarkWorld];
     default:
-      return allEntrances;
+      return [];
   }
 });
 </script>
